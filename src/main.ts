@@ -4,10 +4,12 @@ import Antd from "ant-design-vue";
 import "ant-design-vue/dist/reset.css";
 import { createPinia } from 'pinia'
 import { createApp } from 'vue'
+import ArcoVueIcon from '@arco-design/web-vue/es/icon'
 
 const app = createApp(App)
 app.use(Antd);
 app.use(createPinia())
 app.use(router)
+app.use(ArcoVueIcon)
 
 app.mount('#app')

@@ -8,9 +8,11 @@ import GlobalHeader from '@/components/GlobalHeader.vue'
       <a-layout-header class="header">
         <GlobalHeader />
       </a-layout-header>
-      <a-layout-content class="content">
-        <router-view />
-      </a-layout-content>
+      <a-layout>
+        <a-layout-content class="content">
+          <router-view />
+        </a-layout-content>
+      </a-layout>
       <a-layout-footer class="footer">
         <a href="https://github.com/HalcyonJX" target="_blank"> 编程刷题网 By HalcyonJX </a>
       </a-layout-footer>
@@ -19,6 +21,30 @@ import GlobalHeader from '@/components/GlobalHeader.vue'
 </template>
 
 <style scoped>
+#basicLayout .header {
+  padding-inline: 20px;
+  background: white;
+  color: unset;
+  margin-bottom: 1px;
+}
+
+#basicLayout .sider {
+  background: #fff;
+  border-right: 0.5px solid #eee;
+  padding-top: 20px;
+}
+
+#basicLayout :deep(.ant-menu-root) {
+  border-bottom: none !important;
+  border-inline-end: none !important;
+}
+
+#basicLayout .content {
+  padding: 28px;
+  background: linear-gradient(to right, #fefefe, #fff);
+  margin-bottom: 28px;
+}
+
 #basicLayout .footer {
   background: #efefef;
   padding: 16px;
@@ -27,18 +53,5 @@ import GlobalHeader from '@/components/GlobalHeader.vue'
   left: 0;
   right: 0;
   text-align: center;
-}
-
-#basicLayout .content {
-  background: linear-gradient(to right, #fefefe, #fff);
-  margin-bottom: 28px;
-  padding: 20px;
-}
-
-#basicLayout .header {
-  padding-inline: 20px;
-  margin-bottom: 16px;
-  color: unset;
-  background: white;
 }
 </style>
