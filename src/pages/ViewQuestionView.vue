@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
 import { message } from 'ant-design-vue'
-import { useRoute } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 import { getQuestionVoByIdUsingGet,doQuestionSubmitUsingPost } from '@/api/questionController'
 import CodeEditor from '@/components/CodeEditor.vue'
 
@@ -46,6 +46,7 @@ const loadData = async () => {
   }
 }
 
+const router = useRouter()
 // 提交方法
 const doSubmit = async () => {
   if (!form.value.code.trim()) {
@@ -70,7 +71,7 @@ const doSubmit = async () => {
       console.log(res)
       message.success('提交成功')
       // 可选的后续操作：跳转到提交记录页面
-      // router.push(`/question/submit/${res.data.data}`)
+      router.push('/question_submit')
     } else {
       message.error('提交失败：' + res.message)
     }
